@@ -1,0 +1,393 @@
+/* =================================================== */
+/* ARCHIVO RESPONSIVE.CSS LIMPIO PARA PROVIL */
+/* =================================================== */
+
+/* =================================================== */
+/* ARCHIVO RESPONSIVE.CSS CON ENFOQUE DE 3 TAMAÑOS */
+/* =================================================== */
+
+/* --------------------------------------------------- */
+/* tablet Breakpoint (Hasta 1024px) */
+/* --------------------------------------------------- */
+@media (max-width: 1350px) {
+    .left-info__rating-title {
+        font-size: 1.8rem;
+    }
+
+    .left-info__subtitle {
+        font-size: 1.9rem;
+
+    }
+
+}
+
+@media (max-width: 1024px) {
+    .left-info__title {
+        font-size: 6.5rem;
+        /* Era 8rem */
+    }
+
+    .home__right {
+        width: 400px;
+        height: 400px;
+    }
+
+    .home__right__img {
+        height: 30rem;
+    }
+
+    /* --- SECCIÓN PRODUCTS --- */
+
+    .products__gallery {
+        width: clamp(320px, 80vw, 600px);
+        height: clamp(250px, 60vw, 400px);
+    }
+
+    .item__title {
+        font-size: 3rem;
+        /* Era 4rem */
+    }
+}
+
+/* --- APARICIÓN DEL MENÚ MÓVIL --- */
+@media(max-width: 1000px) {
+    .layout {
+        min-width: auto;
+    }
+
+    .navbar__mobile-btn {
+        display: block;
+    }
+
+    .navbar__nav {
+        display: none;
+    }
+}
+
+/* --------------------------------------------------- */
+/* mobile Breakpoint (Hasta 768px) */
+/* --------------------------------------------------- */
+@media (max-width: 850px) {
+
+    /* --- SECCIÓN HOME --- */
+
+    /* El cambio más importante: el layout se apila verticalmente */
+    .home__display {
+        flex-direction: column;
+        align-items: center;
+        /* Centramos los items */
+        text-align: center;
+        /* Centramos el texto dentro de los items */
+    }
+
+    .home__left-info {
+        /* Eliminamos el margen superior para que se vea bien apilado */
+        margin-top: 0;
+    }
+
+    .left-info__title {
+        font-size: 4.5rem;
+        /* Hacemos el título manejable para móviles */
+    }
+
+    .left-info__subtitle {
+        font-size: 1.8rem;
+        margin-right: 0;
+        /* Quitamos el margen derecho que ya no es necesario */
+    }
+
+    /* Centramos los botones y las reseñas */
+    .left-info__buttons,
+    .home__reviews-row {
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .home__right {
+        width: 320px;
+        /* Tamaño fijo para el círculo en móvil */
+        height: 320px;
+        flex-basis: auto;
+        /* Reseteamos la base del flex item */
+    }
+
+    .home__right__img {
+        height: 24rem;
+    }
+
+    .left-info__ratings {
+        justify-content: center;
+        margin-top: 1rem;
+    }
+    .left-reviews__circles {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; /* <--- AÑADE ESTA LÍNEA */
+    margin-right: 0;
+}
+.left-reviews__rate {
+    display: flex;
+    flex-direction: row;       /* Para que estén uno al lado del otro */
+    justify-content: center; /* AÑADIDO: Para centrarlos horizontalmente */
+    align-items: center;       /* MANTENIDO: Para centrarlos verticalmente */
+    gap: 1rem;                 /* Un poco más de espacio para que no se peguen */
+}
+.left-reviews-img {
+    width: 40px;
+    height: 40px;
+}
+    /* --- SECCIÓN PRODUCTS --- */
+
+    /* Reducimos el padding general de la sección para dar más espacio al contenido */
+    .layout__products {
+        padding-top: 6rem;
+        padding-bottom: 6rem;
+    }
+
+    /* Hacemos el título de la sección y el subtítulo más pequeños */
+    .products__top .left-info__title {
+        font-size: 4.5rem;
+    }
+
+    .products__subtitle {
+        font-size: 1.8rem;
+    }
+
+    /* Ajustamos la animación del carrusel para que funcione en espacios más pequeños */
+    @keyframes shuffle-3d {
+        0% {
+            transform: translateX(0) scale(0.7) translateZ(-200px);
+            opacity: 0;
+        }
+
+        16.66% {
+            transform: translateX(100px) scale(0.8) translateZ(-150px);
+            opacity: 0.8;
+        }
+
+        33.32% {
+            transform: translateX(50px) scale(0.9) translateZ(-100px);
+            opacity: 0.9;
+        }
+
+        49.98% {
+            transform: translateX(0) scale(1) translateZ(0);
+            opacity: 1;
+        }
+
+        66.64% {
+            transform: translateX(-50px) scale(0.9) translateZ(-100px);
+            opacity: 0.9;
+        }
+
+        83.3% {
+            transform: translateX(-100px) scale(0.8) translateZ(-150px);
+            opacity: 0.8;
+        }
+
+        100% {
+            transform: translateX(0) scale(0.7) translateZ(-200px);
+            opacity: 0;
+        }
+    }
+}
+
+/* --- AJUSTES AL POPUP Y OTROS --- */
+@media(max-width: 770px) {
+
+    .home__left-info {
+        text-align: center;
+    }
+
+    .left-info__buttons {
+        display: inline-flex;
+        gap: 2rem;
+        margin: 2rem 0 4rem;
+        vertical-align: middle;
+    }
+
+    /* --- Ajuste del Popup para que se haga vertical --- */
+    .popup-content {
+        flex-direction: column;
+        height: auto;
+        max-height: 90vh;
+        /* Para que no ocupe toda la pantalla y se pueda hacer scroll */
+        overflow-y: auto;
+    }
+
+    .popup-right {
+        /* Ya no necesitamos .popup-left */
+        width: 100%;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 500px) {
+
+    /* 1. Centra los dos bloques principales (copyright y redes) */
+    .fbottom__info {
+        align-items: center; /* Cambiamos el 'flex-start' a 'center' */
+    }
+
+    /* 2. Centra el texto DENTRO del bloque de copyright */
+    .footer__copyright {
+        text-align: center;
+    }
+
+    /* 3. Apila el texto del copyright y lo centra */
+    .copyright__text {
+        display: flex;
+        flex-direction: column; /* Apila los elementos */
+        align-items: center;   /* Los centra horizontalmente */
+        gap: 4px;              /* Un pequeño espacio entre las líneas */
+    }
+}
+/* --- ESTILOS DEL MENÚ MÓVIL (YA NO SON MEDIA QUERIES) --- */
+.mobile-btn__wrap {
+    background-color: var(--color-text-body);
+    height: 5rem;
+    width: 5rem;
+    border: none;
+    border-radius: 3.2rem;
+    transition: all 300ms ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.mobile-btn__line {
+    margin-bottom: 0.4rem;
+    border-radius: 1rem;
+    transition: all 300ms ease-in-out;
+    background-color: var(--color-secondary);
+    height: 0.2rem;
+    width: 2rem;
+}
+
+.mobile-btn__line:last-child {
+    margin-bottom: 0;
+    margin-right: -1rem;
+    width: 1rem;
+}
+
+.mobile-btn__wrap:hover {
+    background-color: var(--color-description);
+}
+
+.menu-mobile__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin: 2rem 1rem;
+    padding: 2rem 0rem;
+}
+
+.menu-mobile__container-logo {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu-mobile__link-logo {
+    display: inline-block;
+}
+
+.menu-mobile__close {
+    background-color: transparent;
+    height: 3rem;
+    width: 3rem;
+    border: none;
+    border-radius: 1rem;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-description);
+    cursor: pointer;
+    transition: all 300ms ease-in-out;
+}
+
+.menu-mobile__close i {
+    font-size: 2rem;
+}
+
+.menu-mobile__close:hover {
+    background-color: var(--color-detail);
+    color: var(--color-secondary);
+}
+
+.menu-mobile__list {
+    display: block;
+    height: 100%;
+    overflow: auto;
+}
+
+.menu-mobile__item {
+    position: relative;
+    border-bottom: 1px solid var(--color-detail);
+    margin: 0 1rem;
+}
+
+.menu-mobile__title {
+    position: relative;
+    height: 5rem;
+    line-height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--color-text-body);
+    font-weight: 500;
+}
+
+.menu-mobile__icon {
+    font-size: 1.4rem;
+}
+
+.menu-mobile__submenu {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+    min-width: 100%;
+    padding: 0;
+    padding-bottom: 1rem;
+}
+
+.submenu-mobile__item {
+    padding: 0.7rem 1rem;
+    display: block;
+    text-decoration: none;
+    position: relative;
+    font-size: 1.5rem;
+    text-transform: capitalize;
+    font-weight: 500;
+}
+
+.submenu-mobile__title {
+    color: var(--color-text-body);
+}
+
+.menu-mobile__item-contact {
+    border: 1px solid var(--color-banner);
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 1rem;
+    box-sizing: border-box;
+}
+
+.menu-mobile__title-contact {
+    color: var(--color-banner);
+}
+
+.menu-mobile__div {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.menu-mobile-icon {
+    font-size: 3rem;
+    color: var(--color-banner);
+}
