@@ -241,6 +241,9 @@
         align-items: center;   /* Los centra horizontalmente */
         gap: 4px;              /* Un pequeño espacio entre las líneas */
     }
+    .item__title {
+    font-size: 2.5rem;
+}
 }
 /* --- ESTILOS DEL MENÚ MÓVIL (YA NO SON MEDIA QUERIES) --- */
 .mobile-btn__wrap {
